@@ -14,14 +14,15 @@ def load_data(file_path):
 
 
 def get_most_frequent_words(text):
+    NUMBER_OF_WORDS_TO_RETURN = 10
     words = regex.findall(r"[\p{L}]+", text.lower())
-    return collections.Counter(words).most_common(10)
+    return collections.Counter(words).most_common(NUMBER_OF_WORDS_TO_RETURN)
 
 
 def print_most_frequent_words(words_array):
-    for word in words_array:
-        print('Word {} occurs {} time{}'.format(word[0], word[1],
-                                                's' * (word[1] != 1)))
+    for word, count in words_array:
+        print('Word {} occurs {} time{}'.format(word, count,
+                                                's' * (count != 1)))
 
 
 if __name__ == '__main__':
