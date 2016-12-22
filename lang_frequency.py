@@ -14,9 +14,9 @@ def load_data(file_path):
 
 
 def get_most_frequent_words(text):
-    NUMBER_OF_WORDS_TO_RETURN = 10
+    number_of_words_to_return = 10
     words = regex.findall(r"[\p{L}]+", text.lower())
-    return collections.Counter(words).most_common(NUMBER_OF_WORDS_TO_RETURN)
+    return collections.Counter(words).most_common(number_of_words_to_return)
 
 
 def print_most_frequent_words(words_array):
